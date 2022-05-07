@@ -330,6 +330,7 @@ public class CarPark{
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof GasolineCar){
 					gasCar += ((GasolineCar)vehicles.get(i)).toString();
+					gasCar += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
                 }
 			}
@@ -339,6 +340,7 @@ public class CarPark{
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof ElectricCar){
 					elecCar += ((ElectricCar)vehicles.get(i)).toString();
+					elecCar += "\n";
 					//elecCar += " |Area : " + String.valueOf(figures[i].calculateArea());
                 }
 			}
@@ -348,6 +350,7 @@ public class CarPark{
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Hybrid){
 					hybiCar += ((Hybrid)vehicles.get(i)).toString();
+					hybiCar += "\n";
 					//hybiCar += " |Area : " + String.valueOf(figures[i].calculateArea());
                 }
 			}
@@ -358,6 +361,7 @@ public class CarPark{
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Motorcycle){
 					motoCar += ((Motorcycle)vehicles.get(i)).toString();
+					motoCar += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
                 }
 			}
@@ -420,6 +424,7 @@ public class CarPark{
 				if (vehicles.get(i) instanceof GasolineCar){
 					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.EXTRA){
 					extra += ((GasolineCar)vehicles.get(i)).toString();
+					extra += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -432,6 +437,7 @@ public class CarPark{
 				if (vehicles.get(i) instanceof GasolineCar){
 					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.REGULAR){
 					regular += ((GasolineCar)vehicles.get(i)).toString();
+					regular += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -443,6 +449,7 @@ public class CarPark{
 				if (vehicles.get(i) instanceof GasolineCar){
 					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.DISEL){
 					disel += ((GasolineCar)vehicles.get(i)).toString();
+					disel += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -452,8 +459,9 @@ public class CarPark{
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Hybrid){
-					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.EXTRA){
-					extra += ((GasolineCar)vehicles.get(i)).toString();
+					if(((Hybrid)vehicles.get(i)).getGasolineType() == GType.EXTRA){
+					extra += ((Hybrid)vehicles.get(i)).toString();
+					extra += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -464,8 +472,9 @@ public class CarPark{
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Hybrid){
-					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.REGULAR){
-					regular += ((GasolineCar)vehicles.get(i)).toString();
+					if(((Hybrid)vehicles.get(i)).getGasolineType() == GType.REGULAR){
+					regular += ((Hybrid)vehicles.get(i)).toString();
+					regular += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -475,8 +484,9 @@ public class CarPark{
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Hybrid){
-					if(((GasolineCar)vehicles.get(i)).getGasolineType() == GType.DISEL){
-					disel += ((GasolineCar)vehicles.get(i)).toString();
+					if(((Hybrid)vehicles.get(i)).getGasolineType() == GType.DISEL){
+					disel += ((Hybrid)vehicles.get(i)).toString();
+					disel += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
 					}
 				}
@@ -512,6 +522,137 @@ public class CarPark{
 		
 		
 		return out;
+	}
+	
+	
+	public String showVehiclesByState(int stateTypeNum){
+		
+		
+		String used = "";
+		String news = "";
+		
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof GasolineCar){
+					if(((GasolineCar)vehicles.get(i)).getVehicleState() == true){
+					news += ((GasolineCar)vehicles.get(i)).toString();
+					news += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof ElectricCar){
+					if(((ElectricCar)vehicles.get(i)).getVehicleState() == true){
+					news += ((ElectricCar)vehicles.get(i)).toString();
+					news += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof Hybrid){
+					if(((Hybrid)vehicles.get(i)).getVehicleState() == true){
+					news += ((Hybrid)vehicles.get(i)).toString();
+					news += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof Motorcycle){
+					if(((Motorcycle)vehicles.get(i)).getVehicleState() == false){
+					news += ((Motorcycle)vehicles.get(i)).toString();
+					news += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof GasolineCar){
+					if(((GasolineCar)vehicles.get(i)).getVehicleState() == false){
+					used += ((GasolineCar)vehicles.get(i)).toString();
+					used += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof ElectricCar){
+					if(((ElectricCar)vehicles.get(i)).getVehicleState() == false){
+					used += ((ElectricCar)vehicles.get(i)).toString();
+					used += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof Hybrid){
+					if(((Hybrid)vehicles.get(i)).getVehicleState() == false){
+					used += ((Hybrid)vehicles.get(i)).toString();
+					used += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+		
+		if(vehicles != null){
+			for(int i=0; i< vehicles.size(); i++){
+				if (vehicles.get(i) instanceof Motorcycle){
+					if(((Motorcycle)vehicles.get(i)).getVehicleState() == false){
+					used += ((Motorcycle)vehicles.get(i)).toString();
+					used += "\n";
+					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
+					}
+				}
+			}
+		}
+	
+		
+		String out = null;
+		
+		switch (stateTypeNum){
+			
+			case 1:
+			out = "**** Used Car information ****\n" + 
+				": " + used + "\n";
+			break;
+			
+			case 2:
+			out = "**** New Car information ****\n" + 
+				": " + news + "\n";
+			break;
+			
+			default:
+			System.out.println("Error, wrong option");
+		
+			
+		}
+		
+		
+		return out;
+		
+		
 	}
 	
 	

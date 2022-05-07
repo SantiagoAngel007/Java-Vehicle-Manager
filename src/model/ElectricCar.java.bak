@@ -1,6 +1,6 @@
 package model;
 
-public class ElectricCar extends Automobile implements BatteryCosumer{
+public class ElectricCar extends Automobile implements BatteryCosumer, CalculatePrice{
 	
 	private boolean chargerType;
 	
@@ -18,9 +18,39 @@ public class ElectricCar extends Automobile implements BatteryCosumer{
 	
 	
 	@Override
+	public double calculatePrice(){
+		
+		double calculate = super.getBasePrice();
+		
+		calculate = calculate + (super.getBasePrice()*0.2);
+		
+		if(super.getVehicleState() == false){
+			
+			calculate = calculate -(super.getBasePrice()*0.1);
+			
+		}
+		
+		calculate = calculate + 500000;
+		
+		
+		return calculate;
+	}
+	
+	
+	@Override
 	public double batteryCosume(){
 		
 		double consume = 0;
+		
+		if(chargerType == true){
+		
+		consume =  (batteryDuration + 13) * (super.getCylinderCapacity()/100);
+		
+		}else{
+			
+		consume =  (batteryDuration + 18) * (super.getCylinderCapacity()/100);	
+			
+		}
 		
 		return consume;
 	}
@@ -32,7 +62,7 @@ public class ElectricCar extends Automobile implements BatteryCosumer{
 		return chargerType;
 	}
 		
-	public String getBatteryDuration(){
+	public double getBatteryDuration(){
 		
 		return batteryDuration;	
 	}
@@ -42,18 +72,18 @@ public class ElectricCar extends Automobile implements BatteryCosumer{
 
 		return "**** Electric Car information ****\n" + 
 		"Base price: " + super.getBasePrice() + "\n" +
-		"Sell price: " + super.getSellPrice() + "\n" +
+		"Sell price: " + calculatePrice() + "\n" +
 		"Brand: " + super.getBrand() + "\n" +
 		"Cylinder Capacity: " + super.getCylinderCapacity() + "\n" +
 		"Mileage: " + super.getMileage() + "\n" +
 		"The vehicle is new: " + super.getVehicleState() + "\n" +	
-		"Plate" + super.getPlate() + "\n" +
+		"Plate: " + super.getPlate() + "\n" +
 		"Number of doors " + super.getNumberOfDoor() + "\n" +
 		"The vehicle has tinted windows " + super.getTintedWindows() + "\n" +
 		"Automobile type " + super.getAutomobileType() + "\n" +
 		"The vehicle has a fast charger " + chargerType + "\n" +
-		"Battery Duration " + batteryDuration + "\n";
-		//"Species in wetland\n " + addSpecieToString();
+		"Battery Duration " + batteryDuration + "\n" +
+		"Battery Consume " + batteryCosume() + "\n";
 	}
 
 	

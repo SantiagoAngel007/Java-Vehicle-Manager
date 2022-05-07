@@ -1,6 +1,6 @@
 package model;
 
-public class GasolineCar extends Automobile implements GasolineConsumer{
+public class GasolineCar extends Automobile implements GasolineConsumer, CalculatePrice{
 	
 	private double tankCapacity;
 	
@@ -17,10 +17,30 @@ public class GasolineCar extends Automobile implements GasolineConsumer{
 		
 	}
 	
+	
+	@Override
+	public double calculatePrice(){
+		
+		double calculate = super.getBasePrice();
+		
+		if(super.getVehicleState() == false){
+			
+			calculate = calculate -(super.getBasePrice()*0.1);
+			
+		}
+		
+		calculate = calculate + 500000;
+		
+		
+		return calculate;
+	}
+	
+	
+	
 	@Override
 	public double gasolineConsume(){
 		
-		double consume = 0;
+		double consume = tankCapacity * (super.getCylinderCapacity()/150);
 		
 		return consume;
 	}
@@ -42,18 +62,18 @@ public class GasolineCar extends Automobile implements GasolineConsumer{
 
 		return "**** Gasoline Car  information ****\n" + 
 		"Base price: " + super.getBasePrice() + "\n" +
-		"Sell price: " + super.getSellPrice() + "\n" +
+		"Sell price: " + calculatePrice() + "\n" +
 		"Brand: " + super.getBrand() + "\n" +
 		"Cylinder Capacity: " + super.getCylinderCapacity() + "\n" +
 		"Mileage: " + super.getMileage() + "\n" +
 		"The vehicle is new: " + super.getVehicleState() + "\n" +	
-		"Plate" + super.getPlate() + "\n" +
+		"Plate: " + super.getPlate() + "\n" +
 		"Number of doors " + super.getNumberOfDoor() + "\n" +
 		"The vehicle has tinted windows " + super.getTintedWindows() + "\n" +
 		"Automobile type " + super.getAutomobileType() + "\n" +
 		"Tank capacity " + tankCapacity + "\n" +
-		"Gasoline type " + gasolineType + "\n";
-		//"Species in wetland\n " + addSpecieToString();
+		"Gasoline type " + gasolineType + "\n" +
+		"Gasoline Consume " + gasolineConsume() + "\n";
 	}
 	
 	

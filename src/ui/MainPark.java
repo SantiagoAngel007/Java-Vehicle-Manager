@@ -90,11 +90,11 @@ public class MainPark {
 			break;
 			
 		case 8:
-			registerMotorcycle();
+			byStatesType();
 			break;
 			
 		case 9:
-			registerMotorcycle();
+			//registerMotorcycle();
 			break;
 		
 		default:
@@ -118,7 +118,7 @@ public class MainPark {
 		basePrice= sc.nextDouble();
 		sc.nextLine();
 		
-		System.out.println("Insert the sell price of the car");
+		System.out.println("Insert any number");
 		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
@@ -141,7 +141,7 @@ public class MainPark {
 		System.out.println("Insert the brand of the car");
 		plate= sc.next();
 		
-		System.out.println("Insert the number of doods of the car");
+		System.out.println("Insert the number of doors of the car");
 		numberOfDoor= sc.nextInt();
 		sc.nextLine();
 		
@@ -202,7 +202,7 @@ public class MainPark {
 		basePrice= sc.nextDouble();
 		sc.nextLine();
 		
-		System.out.println("Insert the sell price of the car");
+		System.out.println("Insert any number");
 		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
@@ -225,7 +225,7 @@ public class MainPark {
 		System.out.println("Insert the brand of the car");
 		plate= sc.next();
 		
-		System.out.println("Insert the number of doods of the car");
+		System.out.println("Insert the number of doors of the car");
 		numberOfDoor= sc.nextInt();
 		sc.nextLine();
 		
@@ -282,7 +282,7 @@ public class MainPark {
 		basePrice= sc.nextDouble();
 		sc.nextLine();
 		
-		System.out.println("Insert the sell price of the car");
+		System.out.println("Insert any number");
 		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
@@ -305,7 +305,7 @@ public class MainPark {
 		System.out.println("Insert the brand of the car");
 		plate= sc.next();
 		
-		System.out.println("Insert the number of doods of the car");
+		System.out.println("Insert the number of doors of the car");
 		numberOfDoor= sc.nextInt();
 		sc.nextLine();
 		
@@ -371,7 +371,7 @@ public class MainPark {
 		basePrice= sc.nextDouble();
 		sc.nextLine();
 		
-		System.out.println("Insert the sell price of the motorcycle");
+		System.out.println("Insert any number");
 		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
@@ -454,6 +454,25 @@ public class MainPark {
 		sc.nextLine();
 		
 		System.out.println(vehicles.showVehiclesByFuel(type));
+	}
+	
+	
+	
+	public void byStatesType(){
+		
+		int type = 0;
+		
+		System.out.println("What type of state would you like to search \n"+ 
+		                    "(1) Used\n" +
+							"(2) New\n" 
+		                    
+	
+		);
+		
+		type = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.println(vehicles.showVehiclesByState(type));
 	}
 	
 	

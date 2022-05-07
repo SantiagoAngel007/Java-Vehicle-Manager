@@ -20,9 +20,9 @@ public class InitModel {
         vehicles.add(new Hybrid(4690, 2443, "Renault Stepway", 400, 7000, true, "2787 AHE", 3, false, AType.VAN, 150, GType.DISEL, false, 10)); 
         vehicles.add(new Hybrid(900, 1223, "Renault Sandero", 1000, 3009, false, "4104 SOY", 2, true, AType.SEDAN, 60, GType.REGULAR, true, 20));
 		vehicles.add(new Hybrid(7000, 4424, "Suzuki Vitara", 521, 2021, true, "4896 MJA", 2, false, AType.VAN, 300, GType.EXTRA, true, 25));
-		vehicles.add(new Motorcycle(4566, "CF Moto", 624, 521, 800, 300, true, "6968 FNN", MType.STANDARD, 200));
-		vehicles.add(new Motorcycle(9000, "Ducati", 162, 521, 800, 0, false, "4757 GNW", MType.SCOOTER, 400));
-		vehicles.add(new Motorcycle(12334, "Honda", 362, 521, 800, 1220, false, "9769 BCA", MType.SPORT, 200));
+		vehicles.add(new Motorcycle(4566, 3442, "CF Moto", 624, 521, true, "6968 FNN", MType.STANDARD, 200));
+		vehicles.add(new Motorcycle(9000, 1344, "Ducati", 162, 521, false, "4757 GNW", MType.SCOOTER, 400));
+		vehicles.add(new Motorcycle(12334, 1231, "Honda", 362, 521, false, "9769 BCA", MType.SPORT, 200));
 
         return vehicles;
 		
