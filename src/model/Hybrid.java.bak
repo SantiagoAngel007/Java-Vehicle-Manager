@@ -10,9 +10,9 @@ public class Hybrid extends Automobile implements BatteryCosumer, GasolineConsum
 	
 	private double batteryDuration;
 	
-	public Hybrid(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, boolean chargerType, double batteryDuration){
+	public Hybrid(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, boolean chargerType, double batteryDuration, int id){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id);
 		
 		this.tankCapacity = tankCapacity;
 		
@@ -106,15 +106,15 @@ public class Hybrid extends Automobile implements BatteryCosumer, GasolineConsum
 		"Mileage: " + super.getMileage() + "\n" +
 		"The vehicle is new: " + super.getVehicleState() + "\n" +	
 		"Plate: " + super.getPlate() + "\n" +
-		"Number of doors " + super.getNumberOfDoor() + "\n" +
-		"The vehicle has tinted windows " + super.getTintedWindows() + "\n" +
-		"Automobile type " + super.getAutomobileType() + "\n" +
-		"Tank capacity " + tankCapacity + "\n" +
-		"Gasoline type " + gasolineType + "\n"+
-		"The vehicle has a fast charger " + chargerType + "\n" +
-		"Battery Duration " + batteryDuration + "\n"+
-		"Battery Consume " + batteryCosume() + "\n" +
-		"Gasoline Consume " + gasolineConsume() + "\n";
+		"Number of doors: " + super.getNumberOfDoor() + "\n" +
+		"The vehicle has tinted windows: " + super.getTintedWindows() + "\n" +
+		"Automobile type: " + super.getAutomobileType() + "\n" +
+		"Tank capacity: " + tankCapacity + "\n" +
+		"Gasoline type: " + gasolineType + "\n"+
+		"The vehicle has a fast charger: " + chargerType + "\n" +
+		"Battery Duration: " + batteryDuration + "\n"+
+		"Battery Consume: " + batteryCosume() + "\n" +
+		"Gasoline Consume: " + gasolineConsume() + "\n";
 	}
 	
 	

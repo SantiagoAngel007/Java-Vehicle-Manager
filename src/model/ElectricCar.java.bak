@@ -6,9 +6,9 @@ public class ElectricCar extends Automobile implements BatteryCosumer, Calculate
 	
 	private double batteryDuration;
 	
-	public ElectricCar(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, boolean chargerType, double batteryDuration){
+	public ElectricCar(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, boolean chargerType, double batteryDuration, int id){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id);
 		
 		this.chargerType = chargerType;
 		
@@ -78,12 +78,12 @@ public class ElectricCar extends Automobile implements BatteryCosumer, Calculate
 		"Mileage: " + super.getMileage() + "\n" +
 		"The vehicle is new: " + super.getVehicleState() + "\n" +	
 		"Plate: " + super.getPlate() + "\n" +
-		"Number of doors " + super.getNumberOfDoor() + "\n" +
-		"The vehicle has tinted windows " + super.getTintedWindows() + "\n" +
-		"Automobile type " + super.getAutomobileType() + "\n" +
-		"The vehicle has a fast charger " + chargerType + "\n" +
-		"Battery Duration " + batteryDuration + "\n" +
-		"Battery Consume " + batteryCosume() + "\n";
+		"Number of doors: " + super.getNumberOfDoor() + "\n" +
+		"The vehicle has tinted windows: " + super.getTintedWindows() + "\n" +
+		"Automobile type: " + super.getAutomobileType() + "\n" +
+		"The vehicle has a fast charger: " + chargerType + "\n" +
+		"Battery Duration: " + batteryDuration + "\n" +
+		"Battery Consume: " + batteryCosume() + "\n";
 	}
 
 	

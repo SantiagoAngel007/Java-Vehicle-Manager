@@ -4,7 +4,7 @@ public abstract class  Vehicle{
 	
 	private double basePrice;
 	
-	private double sellPrice;
+	//private double sellPrice;
 	
 	private String brand;
 	
@@ -16,18 +16,21 @@ public abstract class  Vehicle{
 	
 	private String plate;
 	
+	private int id;
+	
 	private Document soat;
 	
 	private Document mechanicalTechnician;
 	
 	private Document propertyCard;
 	
+	private Document [] documents;
 	
-	public Vehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate){
+	public Vehicle(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int id){
 		
 		this.basePrice = basePrice;
 		
-		this.sellPrice =  sellPrice;
+		this.id =  id;
 		
 		this.brand =  brand;
 		
@@ -37,7 +40,9 @@ public abstract class  Vehicle{
 		
 		this.vehicleState =  vehicleState;
 		
-		this.plate =  plate;
+		this.plate = plate;
+		
+		documents = new Document [3];
 		
 	}
 	
@@ -47,9 +52,9 @@ public abstract class  Vehicle{
 		return basePrice;
 	}
 	
-	public double getSellPrice(){
+	public int getId(){
 		
-		return sellPrice;
+		return id;
 	}
 	
 	public String getBrand(){

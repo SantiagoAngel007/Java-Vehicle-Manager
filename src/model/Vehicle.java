@@ -4,8 +4,6 @@ public abstract class  Vehicle{
 	
 	private double basePrice;
 	
-	private double sellPrice;
-	
 	private String brand;
 	
 	private double cylinderCapacity;
@@ -16,18 +14,23 @@ public abstract class  Vehicle{
 	
 	private String plate;
 	
+	private int id;
+	
 	private Document soat;
 	
 	private Document mechanicalTechnician;
 	
 	private Document propertyCard;
+
+	private int dateOfCreation;
 	
+	//protected Document [] documents; 
 	
-	public Vehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate){
+	public Vehicle(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
 		this.basePrice = basePrice;
 		
-		this.sellPrice =  sellPrice;
+		this.id =  id;
 		
 		this.brand =  brand;
 		
@@ -38,6 +41,16 @@ public abstract class  Vehicle{
 		this.vehicleState =  vehicleState;
 		
 		this.plate = plate;
+
+		this.soat = soat;
+
+		this.mechanicalTechnician = mechanicalTechnician;
+
+		this.propertyCard = propertyCard;
+
+		this.dateOfCreation = dateOfCreation;
+		
+		//documents = new Document [3];
 		
 	}
 	
@@ -47,9 +60,9 @@ public abstract class  Vehicle{
 		return basePrice;
 	}
 	
-	public double getSellPrice(){
+	public int getId(){
 		
-		return sellPrice;
+		return id;
 	}
 	
 	public String getBrand(){
@@ -75,6 +88,26 @@ public abstract class  Vehicle{
 	public String getPlate(){
 		
 		return plate;
+	}
+
+	public Document getSoat(){
+		
+		return soat;
+	}
+
+	public Document getMechanicalTechnician(){
+		
+		return mechanicalTechnician;
+	}
+
+	public Document getPropertyCard(){
+		
+		return propertyCard;
+	}
+
+	public int getDateOfCreation(){
+		
+		return dateOfCreation;
 	}
 	
 }

@@ -8,9 +8,9 @@ public abstract class Automobile extends Vehicle{
 	
 	private AType automobileType;
 	
-	public Automobile(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType){
+	public Automobile(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, id,  soat, mechanicalTechnician, propertyCard, dateOfCreation);
 		
 		this.numberOfDoor =  numberOfDoor;
 		

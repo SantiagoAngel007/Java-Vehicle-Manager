@@ -6,9 +6,9 @@ public class GasolineCar extends Automobile implements GasolineConsumer, Calcula
 	
 	private GType gasolineType;
 	
-	public GasolineCar(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType){
+	public GasolineCar(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, int id){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id);
 		
 		this.tankCapacity = tankCapacity;
 		
@@ -67,12 +67,14 @@ public class GasolineCar extends Automobile implements GasolineConsumer, Calcula
 		"Cylinder Capacity: " + super.getCylinderCapacity() + "\n" +
 		"Mileage: " + super.getMileage() + "\n" +
 		"The vehicle is new: " + super.getVehicleState() + "\n" +	
-		"Plate" + super.getPlate() + "\n" +
+		"Plate: " + super.getPlate() + "\n" +
 		"Number of doors " + super.getNumberOfDoor() + "\n" +
 		"The vehicle has tinted windows " + super.getTintedWindows() + "\n" +
 		"Automobile type " + super.getAutomobileType() + "\n" +
 		"Tank capacity " + tankCapacity + "\n" +
 		"Gasoline type " + gasolineType + "\n" +
+		"Gasoline type " + gasolineType + "\n" +
+		"Gasoline type " + super.getId() + "\n" +
 		"Gasoline Consume " + gasolineConsume() + "\n";
 	}
 	

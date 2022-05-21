@@ -16,7 +16,10 @@ public class MainPark {
 		vehicles = new CarPark();
 		
 		vehicles.setVehicles(init.createVehicles());
+
+		vehicles.fillingArrayParking();
 		
+		vehicles.fillingArrayParkingSixLine();
 	}
 
 	public static void main(String[] args) {
@@ -33,6 +36,10 @@ public class MainPark {
 		}while (option!=0);
 		
 	}
+
+
+	
+
 	
 	public int showMenu() {
 		int option=0;
@@ -47,7 +54,12 @@ public class MainPark {
 				"(6) Show information by type of vehicles \n"+
 				"(7) Show information by type of fuel \n"+
 				"(8) Show information by type state \n"+
-				"(9) Show all vehicles \n"+
+				"(9) Show documents information by id \n"+
+				"(10) Save a car in a parking lot\n"+
+				"(11) TESTS \n"+
+				"(12) Show information of vehicles in the parking \n"+
+				"(13) Show the oldest and the newest car in the paring \n"+
+				"(14) Show the porcentage of the ocupation\n"+
 				"(0) To leave the application"
 				);
 		option= sc.nextInt();
@@ -94,8 +106,36 @@ public class MainPark {
 			break;
 			
 		case 9:
-			//registerMotorcycle();
+			byId();
 			break;
+
+		case 10:
+			SearchToSave();
+		break;
+
+		case 11:
+		System.out.println(vehicles.printParkingArray());
+		
+			//System.out.println(vehicles.printParkingArray());
+			//System.out.println(vehicles.showArray(parking_array[][]));
+			//System.out.println(parking_array[][]);
+			//vehicles.decodingSoat();
+			//System.out.println(vehicles.createMatrix());
+			//vehicles.decodingMechanicalTechnician();
+			//vehicles.decodingPropertyCard();
+			break;
+
+		case 12:
+			System.out.println(vehicles.showVehiclesMatrix());
+		break;
+
+		case 13:
+			
+		break;
+
+		case 14:
+		System.out.println("The porcentaje of the ocupation in the parking lots is " + vehicles.showPorcentajeOfOcupation() + "%");
+		break;
 		
 		default:
 			System.out.println("Error, wrong option");
@@ -108,18 +148,16 @@ public class MainPark {
 	public void registerGasCar() {
 		
 		
-		double basePrice, cylinderCapacity, sellPrice, mileage, tankCapacity;
+		double basePrice, cylinderCapacity, mileage, tankCapacity;
 		String brand, plate;
-		int tintedWindows, automobileType ,numberOfDoor, gasolineType, vehicleState;
+		int tintedWindows, automobileType ,numberOfDoor, gasolineType, vehicleState, id;
+		double[] docs = new double[9];
+		int creation;
 		
 		
 		System.out.println("Registering the gasoline car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -138,7 +176,7 @@ public class MainPark {
 		vehicleState= sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("Insert the brand of the car");
+		System.out.println("Insert the plate of the car");
 		plate= sc.next();
 		
 		System.out.println("Insert the number of doors of the car");
@@ -170,10 +208,73 @@ public class MainPark {
 		gasolineType= sc.nextInt();
 		sc.nextLine();
 		
+		id = (int)(Math.random()*(1000)+1);
+
+
+	
+		System.out.println("Does this car have SOAT? yes(1) no(0)");
+		int confirmation = sc.nextInt();
+		if(confirmation==1){
+			System.out.println("What is the document price");
+			docs[0] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[1] = sc.nextDouble();
+
+			System.out.println("Incert the coverage of the car");
+			docs[2] = sc.nextDouble();
+
+
+		}else{
+			docs[0] = 0;
+			docs[1] = 0;
+			docs[2] = 0;
+		}
+
+		System.out.println("Does this car have MechanicalTechnician? yes(1) no(0)");
+		int confirmation2 = sc.nextInt();
+		if(confirmation2==1){
+			System.out.println("What is the document price");
+			docs[3] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[4] = sc.nextDouble();
+
+			System.out.println("Incert the gas levels of the car");
+			docs[5] = sc.nextDouble();
+
+
+		}else{
+			docs[3] = 0;
+			docs[4] = 0;
+			docs[5] = 0;
+		}
+
+
+		System.out.println("Does this car have PropertyCard? yes(1) no(0)");
+		int confirmation3 = sc.nextInt();
+		if(confirmation3==1){
+			System.out.println("What is the document price");
+			docs[6] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[7] = sc.nextDouble();
+
+
+		}else{
+			docs[6] = 0;
+			docs[7] = 0;
+		}
+
+		System.out.println("Insert the (1) if the creation date of the car");
+		creation= sc.nextInt();
+		sc.nextLine();
+
+
+
 		
 		
-		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType);
+		vehicles.addVehicle( basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, id, docs, creation);
 		
 		
 	}
@@ -184,7 +285,6 @@ public class MainPark {
 		
 		
 		double basePrice;
-		double sellPrice;
 		String brand ;
 		double cylinderCapacity;
 		double mileage;
@@ -195,15 +295,14 @@ public class MainPark {
 		int automobileType;
 		int chargerType;
 		double batteryDuration;
+		int id;
+		double[] docs = new double[9];
+		int creation;
 		
 		
 		System.out.println("Registering the electric car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -222,7 +321,7 @@ public class MainPark {
 		vehicleState= sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("Insert the brand of the car");
+		System.out.println("Insert the plate of the car");
 		plate= sc.next();
 		
 		System.out.println("Insert the number of doors of the car");
@@ -249,10 +348,70 @@ public class MainPark {
 		batteryDuration= sc.nextDouble();
 		sc.nextLine();
 		
+		id = (int)(Math.random()*(1000)+1);
+
+
+		System.out.println("Does this car have SOAT? yes(1) no(0)");
+		int confirmation = sc.nextInt();
+		if(confirmation==1){
+			System.out.println("What is the document price");
+			docs[0] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[1] = sc.nextDouble();
+
+			System.out.println("Incert the coverage of the car");
+			docs[2] = sc.nextDouble();
+
+
+		}else{
+			docs[0] = 0;
+			docs[1] = 0;
+			docs[2] = 0;
+		}
+
+		System.out.println("Does this car have MechanicalTechnician? yes(1) no(0)");
+		int confirmation2 = sc.nextInt();
+		if(confirmation2==1){
+			System.out.println("What is the document price");
+			docs[3] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[4] = sc.nextDouble();
+
+			System.out.println("Incert the gas levels of the car");
+			docs[5] = sc.nextDouble();
+
+
+		}else{
+			docs[3] = 0;
+			docs[4] = 0;
+			docs[5] = 0;
+		}
+
+
+		System.out.println("Does this car have PropertyCard? yes(1) no(0)");
+		int confirmation3 = sc.nextInt();
+		if(confirmation3==1){
+			System.out.println("What is the document price");
+			docs[6] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[7] = sc.nextDouble();
+
+
+		}else{
+			docs[6] = 0;
+			docs[7] = 0;
+		}
+
+
+		System.out.println("Insert the (1) if the creation date of the car");
+		creation= sc.nextInt();
+		sc.nextLine();
 		
 		
-		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  chargerType,  batteryDuration);
+		vehicles.addVehicle( basePrice, brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  chargerType,  batteryDuration, id, docs, creation);
 		
 		
 	}
@@ -261,7 +420,6 @@ public class MainPark {
 	public void registerHybirdCar() {
 		
 		double basePrice;
-		double sellPrice;
 		String brand;
 		double cylinderCapacity;
 		double mileage;
@@ -274,16 +432,15 @@ public class MainPark {
 		int gasolineType;
 		int chargerType;
 		double batteryDuration;
+		int id;
+		double[] docs = new double[9];
+		int creation;
 		
 		
 		
 		System.out.println("Registering the hybird car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -302,7 +459,7 @@ public class MainPark {
 		vehicleState= sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("Insert the brand of the car");
+		System.out.println("Insert the plate of the car");
 		plate= sc.next();
 		
 		System.out.println("Insert the number of doors of the car");
@@ -343,9 +500,69 @@ public class MainPark {
 		sc.nextLine();
 		
 		
+		id = (int)(Math.random()*(1000)+1);
+
+
+		System.out.println("Does this car have SOAT? yes(1) no(0)");
+		int confirmation = sc.nextInt();
+		if(confirmation==1){
+			System.out.println("What is the document price");
+			docs[0] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[1] = sc.nextDouble();
+
+			System.out.println("Incert the coverage of the car");
+			docs[2] = sc.nextDouble();
+
+
+		}else{
+			docs[0] = 0;
+			docs[1] = 0;
+			docs[2] = 0;
+		}
+
+		System.out.println("Does this car have MechanicalTechnician? yes(1) no(0)");
+		int confirmation2 = sc.nextInt();
+		if(confirmation2==1){
+			System.out.println("What is the document price");
+			docs[3] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[4] = sc.nextDouble();
+
+			System.out.println("Incert the gas levels of the car");
+			docs[5] = sc.nextDouble();
+
+
+		}else{
+			docs[3] = 0;
+			docs[4] = 0;
+			docs[5] = 0;
+		}
+
+
+		System.out.println("Does this car have PropertyCard? yes(1) no(0)");
+		int confirmation3 = sc.nextInt();
+		if(confirmation3==1){
+			System.out.println("What is the document price");
+			docs[6] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[7] = sc.nextDouble();
+
+
+		}else{
+			docs[6] = 0;
+			docs[7] = 0;
+		}
+
+		System.out.println("Insert the (1) if the creation date of the car");
+		creation= sc.nextInt();
+		sc.nextLine();
 		
 		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, chargerType,  batteryDuration);
+		vehicles.addVehicle( basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, chargerType,  batteryDuration, id, docs, creation);
 		
 		
 	}
@@ -356,7 +573,6 @@ public class MainPark {
 		
 		
 		double basePrice;
-		double sellPrice;
 		String brand;
 		double cylinderCapacity;
 		double mileage;
@@ -364,15 +580,14 @@ public class MainPark {
 		String plate;
 		int motorcycleType;
 		double gasolineCapacity;
+		int id;
+		double[] docs = new double[9];
+		int creation;
 		
 		
 		System.out.println("Registering the motorcycle");
 		System.out.println("Insert the base price of the motorcycle");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the motorcycle");
@@ -391,7 +606,7 @@ public class MainPark {
 		vehicleState= sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("Insert the brand of the motorcycle");
+		System.out.println("Insert the plate of the motorcycle");
 		plate= sc.next();
 		
 		
@@ -410,9 +625,69 @@ public class MainPark {
 		sc.nextLine();
 		
 		
+		id = (int)(Math.random()*(1000)+1);
+
+
+		System.out.println("Does this car have SOAT? yes(1) no(0)");
+		int confirmation = sc.nextInt();
+		if(confirmation==1){
+			System.out.println("What is the document price");
+			docs[0] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[1] = sc.nextDouble();
+
+			System.out.println("Incert the coverage of the car");
+			docs[2] = sc.nextDouble();
+
+
+		}else{
+			docs[0] = 0;
+			docs[1] = 0;
+			docs[2] = 0;
+		}
+
+		System.out.println("Does this car have MechanicalTechnician? yes(1) no(0)");
+		int confirmation2 = sc.nextInt();
+		if(confirmation2==1){
+			System.out.println("What is the document price");
+			docs[3] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[4] = sc.nextDouble();
+
+			System.out.println("Incert the gas levels of the car");
+			docs[5] = sc.nextDouble();
+
+
+		}else{
+			docs[3] = 0;
+			docs[4] = 0;
+			docs[5] = 0;
+		}
+
+
+		System.out.println("Does this car have PropertyCard? yes(1) no(0)");
+		int confirmation3 = sc.nextInt();
+		if(confirmation3==1){
+			System.out.println("What is the document price");
+			docs[6] = sc.nextDouble();
+
+			System.out.println("year of the document");
+			docs[7] = sc.nextDouble();
+
+
+		}else{
+			docs[6] = 0;
+			docs[7] = 0;
+		}
+
+
+		System.out.println("Insert the (1) if the creation date of the car");
+		creation= sc.nextInt();
+		sc.nextLine();
 		
-		
-		vehicles.addVehicle(basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate, motorcycleType, gasolineCapacity);
+		vehicles.addVehicle(basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate, motorcycleType, gasolineCapacity, id, docs, creation);
 		
 		
 	}
@@ -476,6 +751,29 @@ public class MainPark {
 	}
 	
 	
+	public void byId(){
+		
+		int type = 0;
+		
+		System.out.println("Incert the id of the vehicle");
+		
+		type = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.println(vehicles.searchById(type));
+	}
+
+	public void SearchToSave(){
+		
+		int type = 0;
+		
+		System.out.println("Incert the id of the vehicle that you want to save");
+		
+		type = sc.nextInt();
+		sc.nextLine();
+		
+		vehicles.saveCarInParking(type);
+	}
 	
 	
 

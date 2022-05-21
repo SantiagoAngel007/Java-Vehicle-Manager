@@ -110,16 +110,12 @@ public class MainPark {
 		
 		double basePrice, cylinderCapacity, sellPrice, mileage, tankCapacity;
 		String brand, plate;
-		int tintedWindows, automobileType ,numberOfDoor, gasolineType, vehicleState;
+		int tintedWindows, automobileType ,numberOfDoor, gasolineType, vehicleState, id;
 		
 		
 		System.out.println("Registering the gasoline car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -141,7 +137,7 @@ public class MainPark {
 		System.out.println("Insert the brand of the car");
 		plate= sc.next();
 		
-		System.out.println("Insert the number of doods of the car");
+		System.out.println("Insert the number of doors of the car");
 		numberOfDoor= sc.nextInt();
 		sc.nextLine();
 		
@@ -170,10 +166,10 @@ public class MainPark {
 		gasolineType= sc.nextInt();
 		sc.nextLine();
 		
+		id = (int)(Math.random()*(1000)+1);
 		
 		
-		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType);
+		vehicles.addVehicle( basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, id);
 		
 		
 	}
@@ -195,15 +191,12 @@ public class MainPark {
 		int automobileType;
 		int chargerType;
 		double batteryDuration;
+		int id;
 		
 		
 		System.out.println("Registering the electric car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -249,10 +242,10 @@ public class MainPark {
 		batteryDuration= sc.nextDouble();
 		sc.nextLine();
 		
+		id = (int)(Math.random()*(1000)+1);
 		
 		
-		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  chargerType,  batteryDuration);
+		vehicles.addVehicle( basePrice, brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  chargerType,  batteryDuration, id);
 		
 		
 	}
@@ -274,16 +267,13 @@ public class MainPark {
 		int gasolineType;
 		int chargerType;
 		double batteryDuration;
+		int id;
 		
 		
 		
 		System.out.println("Registering the hybird car");
 		System.out.println("Insert the base price of the car");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the car");
@@ -343,9 +333,10 @@ public class MainPark {
 		sc.nextLine();
 		
 		
+		id = (int)(Math.random()*(1000)+1);
 		
 		
-		vehicles.addVehicle( basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, chargerType,  batteryDuration);
+		vehicles.addVehicle( basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate,  numberOfDoor,  tintedWindows,  automobileType,  tankCapacity,  gasolineType, chargerType,  batteryDuration, id);
 		
 		
 	}
@@ -364,15 +355,12 @@ public class MainPark {
 		String plate;
 		int motorcycleType;
 		double gasolineCapacity;
+		int id;
 		
 		
 		System.out.println("Registering the motorcycle");
 		System.out.println("Insert the base price of the motorcycle");
 		basePrice= sc.nextDouble();
-		sc.nextLine();
-		
-		System.out.println("Insert any number");
-		sellPrice= sc.nextDouble();
 		sc.nextLine();
 		
 		System.out.println("Insert the brand of the motorcycle");
@@ -391,7 +379,7 @@ public class MainPark {
 		vehicleState= sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("Insert the brand of the motorcycle");
+		System.out.println("Insert the plate of the motorcycle");
 		plate= sc.next();
 		
 		
@@ -410,9 +398,9 @@ public class MainPark {
 		sc.nextLine();
 		
 		
+		id = (int)(Math.random()*(1000)+1);
 		
-		
-		vehicles.addVehicle(basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate, motorcycleType, gasolineCapacity);
+		vehicles.addVehicle(basePrice,  brand,  cylinderCapacity,  mileage,  vehicleState,  plate, motorcycleType, gasolineCapacity, id);
 		
 		
 	}

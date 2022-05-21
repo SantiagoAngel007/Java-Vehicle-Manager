@@ -6,9 +6,9 @@ public class GasolineCar extends Automobile implements GasolineConsumer, Calcula
 	
 	private GType gasolineType;
 	
-	public GasolineCar(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType){
+	public GasolineCar(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id, soat, mechanicalTechnician, propertyCard, dateOfCreation );
 		
 		this.tankCapacity = tankCapacity;
 		
@@ -73,6 +73,8 @@ public class GasolineCar extends Automobile implements GasolineConsumer, Calcula
 		"Automobile type " + super.getAutomobileType() + "\n" +
 		"Tank capacity " + tankCapacity + "\n" +
 		"Gasoline type " + gasolineType + "\n" +
+		"Gasoline Car id " + super.getId() + "\n" +
+		"Creation date " + super.getDateOfCreation() + "\n" +
 		"Gasoline Consume " + gasolineConsume() + "\n";
 	}
 	

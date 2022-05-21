@@ -10,9 +10,9 @@ public class Hybrid extends Automobile implements BatteryCosumer, GasolineConsum
 	
 	private double batteryDuration;
 	
-	public Hybrid(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, boolean chargerType, double batteryDuration){
+	public Hybrid(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, double tankCapacity, GType gasolineType, boolean chargerType, double batteryDuration, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id, soat, mechanicalTechnician, propertyCard, dateOfCreation );
 		
 		this.tankCapacity = tankCapacity;
 		
@@ -114,6 +114,8 @@ public class Hybrid extends Automobile implements BatteryCosumer, GasolineConsum
 		"The vehicle has a fast charger: " + chargerType + "\n" +
 		"Battery Duration: " + batteryDuration + "\n"+
 		"Battery Consume: " + batteryCosume() + "\n" +
+		"Hybrid Car id " + super.getId() + "\n" +
+		"Creation date " + super.getDateOfCreation() + "\n" +
 		"Gasoline Consume: " + gasolineConsume() + "\n";
 	}
 	

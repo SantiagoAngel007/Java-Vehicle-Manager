@@ -24,7 +24,7 @@ public class CarPark{
 	}
 	
 	
-	public void addVehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, double tankCapacity, int gasolineType) {
+	public void addVehicle(double basePrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, double tankCapacity, int gasolineType, int id) {
 		
 		
 		boolean state = false;
@@ -82,8 +82,10 @@ public class CarPark{
 			
 		}
 		
+		int b = (int)(Math.random()*(100-1+1)+1);
 		
-		Vehicle gasCar = new GasolineCar (basePrice, sellPrice, brand, cylinderCapacity, mileage, state, plate, numberOfDoor, windows, aType,  tankCapacity, gType);
+		
+		Vehicle gasCar = new GasolineCar (basePrice, brand, cylinderCapacity, mileage, state, plate, numberOfDoor, windows, aType,  tankCapacity, gType, id);
 		
 		vehicles.add(gasCar);
 		
@@ -93,7 +95,7 @@ public class CarPark{
 	
 	
 	
-	public void addVehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, int chargerType, double batteryDuration){
+	public void addVehicle(double basePrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, int chargerType, double batteryDuration, int id){
 		
 		
 		boolean state = false;
@@ -132,7 +134,7 @@ public class CarPark{
 		
 		}	
 		
-		Vehicle elecCar = new ElectricCar (basePrice, sellPrice, brand, cylinderCapacity, mileage, state, plate, numberOfDoor, windows, aType, charger, batteryDuration);
+		Vehicle elecCar = new ElectricCar (basePrice, brand, cylinderCapacity, mileage, state, plate, numberOfDoor, windows, aType, charger, batteryDuration, id);
 		
 		vehicles.add(elecCar);
 		
@@ -141,7 +143,7 @@ public class CarPark{
 	
 	
 	
-	public void addVehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, double tankCapacity, int gasolineType, int chargerType, double batteryDuration){
+	public void addVehicle(double basePrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int numberOfDoor, int tintedWindows, int automobileType, double tankCapacity, int gasolineType, int chargerType, double batteryDuration, int id){
 	
 	
 	
@@ -205,7 +207,7 @@ public class CarPark{
 			
 		}
 		
-		Vehicle hybiCar = new Hybrid (basePrice,  sellPrice,  brand,  cylinderCapacity,  mileage,  state,  plate,  numberOfDoor,  windows,  aType,  tankCapacity,  gType,  charger,  batteryDuration);
+		Vehicle hybiCar = new Hybrid (basePrice,  brand,  cylinderCapacity,  mileage,  state,  plate,  numberOfDoor,  windows,  aType,  tankCapacity,  gType,  charger,  batteryDuration, id);
 		
 		vehicles.add(hybiCar);
 		
@@ -213,7 +215,7 @@ public class CarPark{
 	}
 	
 	
-	public void addVehicle(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int motorcycleType, double gasolineCapacity){
+	public void addVehicle(double basePrice, String brand, double cylinderCapacity, double mileage, int vehicleState, String plate, int motorcycleType, double gasolineCapacity, int id){
 		
 		
 		boolean state = false;
@@ -249,7 +251,7 @@ public class CarPark{
 			
 		}
 		
-		Vehicle motoCar = new Motorcycle (basePrice, sellPrice, brand, cylinderCapacity, mileage, state, plate, mType, gasolineCapacity);
+		Vehicle motoCar = new Motorcycle (basePrice, brand, cylinderCapacity, mileage, state, plate, mType, gasolineCapacity, id);
 		
 		vehicles.add(motoCar);
 		
@@ -571,7 +573,7 @@ public class CarPark{
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
 				if (vehicles.get(i) instanceof Motorcycle){
-					if(((Motorcycle)vehicles.get(i)).getVehicleState() == false){
+					if(((Motorcycle)vehicles.get(i)).getVehicleState() == true){
 					news += ((Motorcycle)vehicles.get(i)).toString();
 					news += "\n";
 					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());

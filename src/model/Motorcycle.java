@@ -6,9 +6,9 @@ public class Motorcycle extends Vehicle implements GasolineConsumer, CalculatePr
 	
 	private double gasolineCapacity;
 	
-	public Motorcycle (double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, MType motorcycleType, double gasolineCapacity){
+	public Motorcycle (double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, MType motorcycleType, double gasolineCapacity, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, id,  soat,  mechanicalTechnician,  propertyCard, dateOfCreation );
 		
 		this.motorcycleType = motorcycleType;
 		
@@ -67,6 +67,8 @@ public class Motorcycle extends Vehicle implements GasolineConsumer, CalculatePr
 		"Plate: " + super.getPlate() + "\n" +
 		"Motorcycle type: " + motorcycleType + "\n" +
 		"Gasoline capacity: " + gasolineCapacity + "\n"+
+		"Motorcycle id " + super.getId() + "\n" +
+		"Creation date " + super.getDateOfCreation() + "\n" +
 		"Gasoline Consume: " + gasolineConsume() + "\n";
 	}
 	

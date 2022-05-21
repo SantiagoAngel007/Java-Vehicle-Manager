@@ -6,9 +6,9 @@ public class ElectricCar extends Automobile implements BatteryCosumer, Calculate
 	
 	private double batteryDuration;
 	
-	public ElectricCar(double basePrice, double sellPrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, boolean chargerType, double batteryDuration){
+	public ElectricCar(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int numberOfDoor, boolean tintedWindows, AType automobileType, boolean chargerType, double batteryDuration, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
-		super(basePrice, sellPrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType);
+		super(basePrice, brand, cylinderCapacity, mileage, vehicleState, plate, numberOfDoor, tintedWindows, automobileType, id, soat, mechanicalTechnician, propertyCard, dateOfCreation );
 		
 		this.chargerType = chargerType;
 		
@@ -83,6 +83,8 @@ public class ElectricCar extends Automobile implements BatteryCosumer, Calculate
 		"Automobile type: " + super.getAutomobileType() + "\n" +
 		"The vehicle has a fast charger: " + chargerType + "\n" +
 		"Battery Duration: " + batteryDuration + "\n" +
+		"Electric Car id " + super.getId() + "\n" +
+		"Creation date " + super.getDateOfCreation() + "\n" +
 		"Battery Consume: " + batteryCosume() + "\n";
 	}
 
