@@ -1159,42 +1159,57 @@ public class CarPark{
 
 	public void saveCarInParking(int id){
 		
-		System.out.println("Nothing yet\n");
-
-	
 
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
-				if((vehicles.get(i)).getId() == id){	
-					if((vehicles.get(i)).getPropertyCard() != null){
-						if((vehicles.get(i)).getVehicleState() == false){
-							if((vehicles.get(i)).getDateOfCreation()<2015){
-								if((vehicles.get(i)).getDateOfCreation() == 2014){
-										parking_array[firstNullSpaceCero()][0] = "| " + (vehicles.get(i)).getPlate() + " |" ;
-										savinParking_array[firstNullSpaceCeroNull()][0] = vehicles.get(i);
-									}else if((vehicles.get(i)).getDateOfCreation() == 2013){
-										parking_array[firstNullSpaceOne()][1] = "| " + (vehicles.get(i)).getPlate() + " |" ;
-										savinParking_array[firstNullSpaceOneNull()][1] = vehicles.get(i);
-									}else if((vehicles.get(i)).getDateOfCreation() == 2012){
-										parking_array[firstNullSpaceTwo()][2] = "| " + (vehicles.get(i)).getPlate() + " |" ;
-										savinParking_array[firstNullSpaceTwoNull()][2] = vehicles.get(i);
-									}else if((vehicles.get(i)).getDateOfCreation() == 2011){
-										parking_array[firstNullSpaceTree()][3] = "| " + (vehicles.get(i)).getPlate() + " |" ;
-										savinParking_array[firstNullSpaceTreeNull()][3] = vehicles.get(i);
-									}else if((vehicles.get(i)).getDateOfCreation() < 2011){
-										parking_array[firstNullSpaceFour()][4] = "| " + (vehicles.get(i)).getPlate() + " |" ;
-										savinParking_array[firstNullSpaceFourNull()][4] = vehicles.get(i);
-								}
-							}
+				if(vehicles.get(i).getId() == id){
+
+					
+
+					boolean isOld = vehicles.get(i).getVehicleState() == false;
+					boolean isUnder15 = vehicles.get(i).getDateOfCreation()<2015;
+					boolean hasCard = vehicles.get(i).getPropertyCard() != null;
+
+					if(isOld && isUnder15 && !hasCard){
+
+						switch(vehicles.get(i).getDateOfCreation()){
+
+							case 2014:
+								parking_array[firstNullSpaceCero()][0] = "| " + (vehicles.get(i)).getPlate() + " |" ;
+								savinParking_array[firstNullSpaceCeroNull()][0] = vehicles.get(i);
+							break;
+
+							case 2013:
+								parking_array[firstNullSpaceOne()][1] = "| " + (vehicles.get(i)).getPlate() + " |" ;
+								savinParking_array[firstNullSpaceOneNull()][1] = vehicles.get(i);	
+							break;
+
+							case 2012:
+								parking_array[firstNullSpaceTwo()][2] = "| " + (vehicles.get(i)).getPlate() + " |" ;
+								savinParking_array[firstNullSpaceTwoNull()][2] = vehicles.get(i);
+							break;
+
+							case 2011:
+								parking_array[firstNullSpaceTree()][3] = "| " + (vehicles.get(i)).getPlate() + " |" ;
+								savinParking_array[firstNullSpaceTreeNull()][3] = vehicles.get(i);
+							break;
+
+							default:
+								parking_array[firstNullSpaceFour()][4] = "| " + (vehicles.get(i)).getPlate() + " |" ;
+								savinParking_array[firstNullSpaceFourNull()][4] = vehicles.get(i);
+							break;
+
+
 						}
 					}
-				}	
+				}
 			}
 		}
 	}
 
 
-		
+
+	
 
 
 	

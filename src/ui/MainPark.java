@@ -767,7 +767,7 @@ public class MainPark {
 		
 		int type = 0;
 		
-		System.out.println("Incert the id of the vehicle that you want to save");
+		System.out.println("Insert the id of the vehicle that you want to save");
 		
 		type = sc.nextInt();
 		sc.nextLine();

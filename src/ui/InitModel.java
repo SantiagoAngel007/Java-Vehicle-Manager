@@ -17,7 +17,7 @@ public class InitModel {
 
 		for(int i=0; i<4; i++){
 			for(int j=0; j<4; j++){
-				//int num = (int)(Math.random()*(100)+1);
+				//int num = (int)(Math.random()*(10)+1);
 				newMatrix[i][j]=j+i;	
 		}
 	}
