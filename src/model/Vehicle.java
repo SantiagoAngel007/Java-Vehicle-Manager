@@ -24,7 +24,6 @@ public abstract class  Vehicle{
 
 	private int dateOfCreation;
 	
-	//protected Document [] documents; 
 	
 	public Vehicle(double basePrice, String brand, double cylinderCapacity, double mileage, boolean vehicleState, String plate, int id, Document soat, Document mechanicalTechnician, Document propertyCard, int dateOfCreation ){
 		
@@ -49,8 +48,6 @@ public abstract class  Vehicle{
 		this.propertyCard = propertyCard;
 
 		this.dateOfCreation = dateOfCreation;
-		
-		//documents = new Document [3];
 		
 	}
 	

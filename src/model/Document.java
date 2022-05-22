@@ -17,19 +17,6 @@ public abstract class Document{
 		this.image = image;
 		
 	}
-
-	/*
-	public void createMatrix(int[][] matrix){
-
-		for(int i=0; i<4; i++){
-				for(int j=0; j<4; j++){
-					int num = (int)(Math.random()*(100)+1);
-					matrix[i][j]=num;
-					numericMatrices.add(newMatrix);
-			}
-		}
-	}
-	*/
 	
 	
 	public double getDocPrice(){
@@ -53,14 +40,6 @@ public abstract class Document{
 	}
 	
 	
-
-		
-	/*
-	return "**** Documents information ****\n" + 
-		"Base price: " + docPrice + "\n" +
-		"Sell price: " + year + "\n" +
-		"Gasoline Consume " + year + "\n";
-	*/
 	
 
 }

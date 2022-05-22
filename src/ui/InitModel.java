@@ -42,10 +42,10 @@ public class InitModel {
 
 		vehicles.add(new GasolineCar(450000, "Kia Picanto", 120, 50000, false, "8670 RPW", 4, false, AType.SEDAN, 50, GType.DISEL, 534, newSoat, newTec, null, 2014));
 		vehicles.add(new ElectricCar(200100, "Mazda 2", 250, 45555, false, "5114 FTZ", 2, false, AType.VAN, false, 15, 535, newSoat, newTec, null, 2013)); 
-		vehicles.add(new Hybrid(700000, "Suzuki Vitara", 521, 2021, false, "3896 MJA", 2, false, AType.VAN, 300, GType.EXTRA, true, 25, 875, newSoat, newTec, null, 2012));
+		vehicles.add(new Hybrid(700000, "Suzuki Vitara", 521, 2021, false, "3896 MJA", 2, false, AType.VAN, 300, GType.EXTRA, true, 25, 875, newSoat, newTec, null, 2011));
 		vehicles.add(new Motorcycle(123300, "Honda", 362, 521, false, "5769 BCA", MType.SPORT, 200, 168, newSoat, newTec, null, 2010));
 
-		vehicles.add(new GasolineCar(300000, "Chevrolet Onix", 250, 12000, false, "7810 PRZ", 2, true, AType.VAN, 100, GType.EXTRA, 132, newSoat, newTec, newPro, 2013 ));
+		vehicles.add(new GasolineCar(300000, "Chevrolet Onix", 250, 12000, false, "0956 PRZ", 2, true, AType.VAN, 100, GType.EXTRA, 133, newSoat, newTec, null, 2014 ));
 
         return vehicles;
 		

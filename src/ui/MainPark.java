@@ -20,6 +20,7 @@ public class MainPark {
 		vehicles.fillingArrayParking();
 		
 		vehicles.fillingArrayParkingSixLine();
+
 	}
 
 	public static void main(String[] args) {
@@ -90,7 +91,6 @@ public class MainPark {
 			
 		case 5:
 			System.out.println(vehicles.showVehicles());
-			//System.out.println(vehicles.prueba());
 			break;
 			
 		case 6:
@@ -130,7 +130,7 @@ public class MainPark {
 		break;
 
 		case 13:
-			
+		System.out.println(vehicles.getGreaterAndLower());
 		break;
 
 		case 14:

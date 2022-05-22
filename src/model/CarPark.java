@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class CarPark{
 
-	private static final int MAX_ROWS =  10;
+	public static final int MAX_ROWS =  10;
 	
-	private static final int MAX_COLUMNS =  6;
+	public static final int MAX_COLUMNS =  6;
 	
 	private ArrayList<Vehicle> vehicles;
 
@@ -564,16 +564,7 @@ public class CarPark{
 			
 		}	
 		
-		/*
-		String out =  "**** Gas Car information ****\n" + 
-		"Base price: " + gasCar + "\n" +
-		"**** Electric Car information ****\n" + 
-		"Sell price: " + elecCar + "\n" +
-		"**** Gas Car information ****\n" + 
-		"Brand: " + hybiCar + "\n" +
-		"**** Gas Car information ****\n" + 
-		"Gasoline capacity " + motoCar + "\n";
-		*/
+		
 		
 		
 		return out;
@@ -710,7 +701,7 @@ public class CarPark{
 
 		if(vehicles != null){
 			for(int i=0; i< vehicles.size(); i++){
-				if((vehicles.get(i)).getVehicleState() == true){
+				if((vehicles.get(i)).getVehicleState() == false){
 					used += (vehicles.get(i)).toString();
 					used += "\n";
 				}
@@ -746,19 +737,48 @@ public class CarPark{
 	}
 	
 	
-	public String prueba(){
+	public String getGreaterAndLower(){
+
+		String out = "";
+		int temporal1= 0;
+		int temporal2= 3000;
+		Vehicle greater = null;
+		Vehicle lower = null;
+
+		for(int i=0; i<MAX_ROWS;  i++){
+			for(int j=0; j<	MAX_COLUMNS; j++){
+				if(savinParking_array[i][j] != null){
+					if (savinParking_array[i][j].getDateOfCreation() >= temporal1){
+						temporal1 = savinParking_array[i][j].getDateOfCreation();
+						greater = savinParking_array[i][j];
+					}
+				}
+			}
+		}
+
 		
-		String prueba = "";
-		
-		if(vehicles != null){
-			for(int i=0; i< vehicles.size(); i++){
-					prueba += (vehicles.get(i)).toString();
-					//gasCar += " |Area : " + String.valueOf(figures[i].calculateArea());
-                
+		for(int i=0; i<MAX_ROWS;  i++){
+			for(int j=0; j<	MAX_COLUMNS; j++){
+				if(savinParking_array[i][j] != null){
+					if (savinParking_array[i][j].getDateOfCreation() <= temporal2){
+						temporal2 = savinParking_array[i][j].getDateOfCreation();
+						lower = savinParking_array[i][j];
+					}
+				}
 			}
 		}
 		
-		return prueba;
+
+		if(greater != null){
+			out += "The newest car is \n" + greater.toString();
+		}
+
+		if(lower != null){
+			out += "And the oldest  car is \n" + lower.toString() + "\n";
+		}
+		
+
+		return out;
 		
 	}
 
