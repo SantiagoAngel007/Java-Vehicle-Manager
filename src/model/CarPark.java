@@ -1161,8 +1161,12 @@ public class CarPark{
 		
 
 		if(vehicles != null){
-			for(int i=0; i< vehicles.size(); i++){
+
+			boolean found = true;
+
+			for(int i=0; i< vehicles.size() && found; i++){
 				if(vehicles.get(i).getId() == id){
+					found = false;
 
 					
 
